@@ -18,9 +18,11 @@ const style = StyleSheet.create({
         width: 50,
         backgroundColor: '#000',
         margin: 5,
-        borderRadius: 25,
+        borderRadius: 35,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     Num: {
-        color:'#FFF'
+        color:'#FFF',        
     }
 })

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, StyleSheet, Text, TextInput } from 'react-native'
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native'
 import StyleDefault from '../componentes/StyleDefault'
 import MostraNumeroMega from './MostraNumeroMega'
 
@@ -38,25 +38,30 @@ export default class Mega extends Component {
     render() {
         return(
             <>
+            <Text style={StyleDefault.fontMedium}>
+                Gerador de números aleatórios
+            </Text>
             <Text style={StyleDefault.fontLarg}>
-                Gerar números da MEGA-SENA
+                 MEGA-SENA
             </Text>
 
             <TextInput 
-                keyboardType={'numeric'}
-                style={{borderBottomWidth:1}}
+                style={style.CaixaTexto}
+                keyboardType={'numeric'}                                
                 placeholder="Quantidade de números"
                 value={`${this.state.qtdeNumeros}`}
                 onChangeText={this.alterarQdteNumero}
-            />
+                
+            />            
+
             <Button
                 style={style.Botao}
                 title='Gerar'
                 onPress={this.gerarNumeros}
             />
-            <Text style={style.NumberBol}>                
+            <View style={style.NumberBol}>                
                 {this.exibirNumeros()}
-            </Text>
+            </View>
             </>
         )
     }
@@ -73,5 +78,11 @@ const style = StyleSheet.create({
     },
     Botao:{
         padding: 20,
+    },
+    CaixaTexto:{        
+        borderBottomWidth:3,         
+        fontSize:28,
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })
